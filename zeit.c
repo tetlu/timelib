@@ -33,15 +33,15 @@ int day_of_the_year(int day, int month, int year) {
 *
 */
 void input_date(int *day, int *month, int *year) {
-    // Eingabeprompts mit Überprüfung der Validität der Eingaben
+    // Eingabeprompts mit ÃœberprÃ¼fung der ValiditÃ¤t der Eingaben
     printf("*** Tag des Jahres ***\n");
     do {
         printf("Geben sie das Jahr ein: ");
-        scanf("%i", *&year);
+        scanf("%i", year);
         printf("Geben sie den Monat ein: ");
-        scanf("%i", *&month);
+        scanf("%i", month);
         printf("Geben sie den Tag ein: ");
-        scanf("%i", *&day);
+        scanf("%i", day);
     } while (! exists_date(*day, *month, *year));
 }
 
@@ -50,7 +50,7 @@ void input_date(int *day, int *month, int *year) {
 *
 * @param int year
 *
-* @return int 1 = Schaltjahr, 0 = kein Schaltjahr, -1 = ungültiges Jahr
+* @return int 1 = Schaltjahr, 0 = kein Schaltjahr, -1 = ungÃ¼ltiges Jahr
 */
 int is_leapyear(int year) {
     if (year < 1582) return -1;
@@ -73,8 +73,8 @@ int is_leapyear(int year) {
 * @param int month
 * @param int year
 *
-* @return int Anzahl von Tagen (1-31), wenn ein gültiger Monat eingegeben wurde,
-              -1 wenn ein ungültiger Monat oder Jahr übergeben wurde
+* @return int Anzahl von Tagen (1-31), wenn ein gÃ¼ltiger Monat eingegeben wurde,
+              -1 wenn ein ungÃ¼ltiger Monat oder Jahr Ã¼bergeben wurde
 */
 int get_days_for_month(int month, int year) {
     if (month >= 1 && month <= 12 && year >= 1582) {
@@ -91,13 +91,13 @@ int get_days_for_month(int month, int year) {
 }
 
 /**
-* Funktion zum herausfinden, ob ein gegebenes Datum existiert/gültig ist
+* Funktion zum herausfinden, ob ein gegebenes Datum existiert/gÃ¼ltig ist
 *
 * @param int day
 * @param int month
 * @param int year
 *
-* @return int 1 = Datum gültig, 0 = Datum nicht gültig
+* @return int 1 = Datum gÃ¼ltig, 0 = Datum nicht gÃ¼ltig
 */
 int exists_date(int day, int month, int year) {
     if (year > 2400 || year < 1582
