@@ -12,16 +12,14 @@
 
 int main() {
     // Variablen deklarieren
-    int day = 1;
-    int year = 0;
-    int month = 1;
+    struct Date datum;
 
     // Eingabeprompt
-    input_date(&day, &month, &year);
+    datum = input_date();
 
     // Ausgabe
-    printf("Heute ist %s", day_of_the_week(day, month, year));
-    printf(", der %i. Tag des Jahres", day_of_the_year(day, month, year));
-    printf(" in der %i. Kalenderwoche", calender_week(day, month, year));
+    printf("Heute ist %s", day_of_the_week(datum));
+    printf(", der %i. Tag des Jahres", day_of_the_year(datum));
+    printf(" in der %i. Kalenderwoche", calender_week(datum));
     return 0;
 }
